@@ -211,12 +211,12 @@ img {
 	padding: 6px 0 5px;
 }
 /** adbox **/
-#contents #adbox {
+#contents #logo2 {
 	background: url(bg-adbox-bottom.png) no-repeat left bottom;
 	padding: 0 0 19px;
 	position: relative;
 }
-#adbox > div {
+#logo > div {
 	background-color: #f0f0f0;
 	height: 300px;
 	-webkit-border-bottom-right-radius: 1px;
@@ -227,7 +227,7 @@ img {
 	border-bottom-left-radius: 1px;
 	padding-right: 20px;
 }
-#adbox > div:after {
+#logo2 > div:after {
 	clear:both;
 	content:"";
 	display:block;
@@ -235,13 +235,13 @@ img {
 	line-height:0;
 	visibility:hidden;
 }
-#adbox h1 {
+#logo2 h1 {
 	padding-top: 18px;
 }
-#adbox h4 {
+#logo2 h4 {
 	font-size: 14px;
 }
-#adbox img {
+#logo2 img {
 	float: left;
 	margin-right: 20px;
 }

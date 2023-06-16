@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Table</title>
+</head>
+<body>
+    <h2>Update Table Values</h2>
+    <form action="/update" method="POST">
+        <label for="eur_buy">Euro Buy:</label>
+        <input type="text" name="eur_buy" value="{{ values['eur_buy'] }}"><br>
+        <label for="eur_sell">Euro Sell:</label>
+        <input type="text" name="eur_sell" value="{{ values['eur_sell'] }}"><br>
+        <br>
+        <label for="usd_buy">USD Buy:</label>
+        <input type="text" name="usd_buy" value="{{ values['usd_buy'] }}"><br>
+        <label for="usd_sell">USD Sell:</label>
+        <input type="text" name="usd_sell" value="{{ values['usd_sell'] }}"><br>
+        <br>
+        <label for="gbp_buy">GBP Buy:</label>
+        <input type="text" name="gbp_buy" value="{{ values['gbp_buy'] }}"><br>
+        <label for="gbp_sell">GBP Sell:</label>
+        <input type="text" name="gbp_sell" value="{{ values['gbp_sell'] }}"><br>
+        <br>
+        <label for="chf_buy">CHF Buy:</label>
+        <input type="text" name="chf_buy" value="{{ values['chf_buy'] }}"><br>
+        <label for="chf_sell">CHF Sell:</label>
+        <input type="text" name="chf_sell" value="{{ values['chf_sell'] }}"><br>
+        <br>
+        <label for="huf_buy">HUF Buy:</label>
+        <input type="text" name="huf_buy" value="{{ values['huf_buy'] }}"><br>
+        <label for="huf_sell">HUF Sell:</label>
+        <input type="text" name="huf_sell" value="{{ values['huf_sell'] }}"><br>
+        <br>
+        <label for="sek_buy">SEK Buy:</label>
+        <input type="text" name="sek_buy" value="{{ values['sek_buy'] }}"><br>
+        <label for="sek_sell">SEK Sell:</label>
+        <input type="text" name="sek_sell" value="{{ values['sek_sell'] }}"><br>
+        <br>
+        <label for="dkk_buy">DKK Buy:</label>
+        <input type="text" name="dkk_buy" value="{{ values['dkk_buy'] }}"><br>
+        <label for="dkk_sell">DKK Sell:</label>
+        <input type="text" name="dkk_sell" value="{{ values['dkk_sell'] }}"><br>
+        <br>
+        <label for="nok_buy">NOK Buy:</label>
+        <input type="text" name="nok_buy" value="{{ values['nok_buy'] }}"><br>
+        <label for="nok_sell">NOK Sell:</label>
+        <input type="text" name="nok_sell" value="{{ values['nok_sell'] }}"><br>
+        <br>
+        <label for="cad_buy">CAD Buy:</label>
+        <input type="text" name="cad_buy" value="{{ values['cad_buy'] }}"><br>
+        <label for="cad_sell">CAD Sell:</label>
+        <input type="text" name="cad_sell" value="{{ values['cad_sell'] }}"><br>
+        <br>
+        <label for="aud_buy">AUD Buy:</label>
+        <input type="text" name="aud_buy" value="{{ values['aud_buy'] }}"><br>
+        <label for="aud_sell">AUD Sell:</label>
+        <input type="text" name="aud_sell" value="{{ values['aud_sell'] }}"><br>
+        <br>
+        <label for="bgn_buy">BGN Buy:</label>
+        <input type="text" name="bgn_buy" value="{{ values['bgn_buy'] }}"><br>
+        <label for="bgn_sell">BGN Sell:</label>
+        <input type="text" name="bgn_sell" value="{{ values['bgn_sell'] }}"><br>
+        <br>
+        <label for="pln_buy">PLN Buy:</label>
+        <input type="text" name="pln_buy" value="{{ values['pln_buy'] }}"><br>
+        <label for="pln_sell">PLN Sell:</label>
+        <input type="text" name="pln_sell" value="{{ values['pln_sell'] }}"><br>
+        <br>
+        <label for="czk_buy">CZK Buy:</label>
+        <input type="text" name="czk_buy" value="{{ values['czk_buy'] }}"><br>
+        <label for="czk_sell">CZK Sell:</label>
+        <input type="text" name="czk_sell" value="{{ values['czk_sell'] }}"><br>
+        <br>
+        <label for="try_buy">TRY Buy:</label>
+        <input type="text" name="try_buy" value="{{ values['try_buy'] }}"><br>
+        <label for="try_sell">TRY Sell:</label>
+        <input type="text" name="try_sell" value="{{ values['try_sell'] }}"><br>
+        <br>
+        <label for="rsd_buy">RSD Buy:</label>
+        <input type="text" name="rsd_buy" value="{{ values['rsd_buy'] }}"><br>
+        <label for="rsd_sell">RSD Sell:</label>
+        <input type="text" name="rsd_sell" value="{{ values['rsd_sell'] }}"><br>
+        <br>
+        <label for="uah_buy">UAH Buy:</label>
+        <input type="text" name="uah_buy" value="{{ values['uah_buy'] }}"><br>
+        <label for="uah_sell">UAH Sell:</label>
+        <input type="text" name="uah_sell" value="{{ values['uah_sell'] }}"><br>
+        <br>
+        <label for="mdl_buy">MDL Buy:</label>
+        <input type="text" name="mdl_buy" value="{{ values['mdl_buy'] }}"><br>
+        <label for="mdl_sell">MDL Sell:</label>
+        <input type="text" name="mdl_sell" value="{{ values['mdl_sell'] }}"><br>
+        <br>
+        <label for="rub_buy">RUB Buy:</label>
+        <input type="text" name="rub_buy" value="{{ values['rub_buy'] }}"><br>
+        <label for="rub_sell">RUB Sell:</label>
+        <input type="text" name="rub_sell" value="{{ values['rub_sell'] }}"><br>
+        <br>
+        <label for="aed_buy">AED Buy:</label>
+        <input type="text" name="aed_buy" value="{{ values['aed_buy'] }}"><br>
+        <label for="aed_sell">AED Sell:</label>
+        <input type="text" name="aed_sell" value="{{ values['aed_sell'] }}"><br>
+        <br>
+        <label for="ils_buy">ILS Buy:</label>
+        <input type="text" name="ils_buy" value="{{ values['ils_buy'] }}"><br>
+        <label for="ils_sell">ILS Sell:</label>
+        <input type="text" name="ils_sell" value="{{ values['ils_sell'] }}"><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

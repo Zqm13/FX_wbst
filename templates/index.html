@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rubin Exchange</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}" type="text/css">
+</head>
+<body>
+<div id="page">
+    <div id="header">
+        <div class="background">
+            <h1 id="logo"><a href="index.html">Rubin Exchange</a></h1>
+            <div id="navigation">
+                <ul>
+                    <li class="selected">
+                        <a href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('offer') }}">Obtine O Oferta</a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.com/maps/dir//Rubin+Valutav%C3%A1lt%C3%B3/@46.3136819,25.303618,19.79z/data=!4m8!4m7!1m0!1m5!1m1!1s0x474b17b94bdfdfab:0xe55f4be2092abbaa!2m2!1d25.3037662!2d46.3137698?entry=ttu"
+                           target="_blank">Indicatii De Orientare</a>
+                    </li>
+                    <li>
+                        <a href="https://www.bnr.ro/Cursul-de-schimb-524.aspx" target="_blank">BNR Rates</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="contents">
+        <div id="adbox">
+            <div>
+
+                <img src="{{ url_for('static', filename='rubin_logo.png') }}" alt="Img" height="310" width="310">
+                <h1>RUBIN VALUTAVÁLTÓ</h1>
+                <h4>Serviciu De Schimb Valutar in Odorheiu Secuiesc</h4>
+
+                <img src="{{ url_for('static', filename='add22.png') }}" alt="AD2" height="176" width="462">
+
+            </div>
+        </div>
+        <div class="sidebar" style="
+    padding-left: 10px;
+    padding-right: 50px;"
+        >
+            <h4 style="padding-left: 10px;">Information</h4>
+            <style>
+  table {
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid rgb(201, 37, 67);
+    padding: 6px;
+    text-align: center;
+  }
+
+
+            </style>
+
+
+            <table style="margin-left: 15px">
+                <thead>
+                <tr>
+                    <th colspan="2">Program de lucru</th>
+                </tr>
+                <tr>
+                    <th>Lun</th>
+                    <th>08:00–21:00</th>
+                </tr>
+                <tr>
+                    <th>Mar</th>
+                    <th>08:00–21:00</th>
+                </tr>
+                <tr>
+                    <th>Mie</th>
+                    <th>08:00–21:00</th>
+                </tr>
+                <tr>
+                    <th>Joi</th>
+                    <th>08:00–21:00</th>
+                </tr>
+                <tr>
+                    <th>Vin</th>
+                    <th>08:00–21:00</th>
+                </tr>
+                <tr>
+                    <th>Sam</th>
+                    <th>08:00–21:00</th>
+                </tr>
+                <tr>
+                    <th>Dum</th>
+                    <th>09:00–18:00</th>
+                </tr>
+                </thead>
+            </table>
+
+            <h4 style="padding-top: 20px; padding-bottom: 0px; padding-right: 20px; padding-left: 3px; margin-bottom: 5px">
+                Sepsiszentgyörgy Kaufland:
+            </h4>
+            <a style="text-decoration: none; color: black;" href="https://www.google.com/maps/place/Kaufland+Sf%C3%A2ntu+Gheorghe/@45.8695291,25.8009606,18z/data=!4m14!1m7!3m6!1s0x40b4a4bb61e3daef:0x6e2837275e4464de!2sStr.+Lunca+Oltului+8,+Sf%C3%A2ntu+Gheorghe!3b1!8m2!3d45.8681285!4d25.8011029!3m5!1s0x40b4a4b6edbfec59:0xeb8cc8e44c6ddcc!8m2!3d45.869796!4d25.8016799!16s%2Fg%2F1hc40_qs6?entry=ttu" target="_blank">
+                <p2 style="padding-left: 20px; display: inline-block;">Oltmező utca / Lunca Oltului 8-12.</p2>
+            </a>
+            <h4 style="padding-top: 20px; padding-bottom: 0px; padding-right: 20px; padding-left: 3px; margin-bottom: 5px">
+                Csíkszereda Kaufland:
+            </h4>
+            <a style="text-decoration: none; color: black;" href="https://www.google.com/maps/place/Kaufland+Miercurea+Ciuc/@46.3662108,25.7974381,18.75z/data=!4m6!3m5!1s0x474b2a052c420ce3:0xb9c22bc6b42ce039!8m2!3d46.3661867!4d25.7968913!16s%2Fg%2F1tmxpsx2?entry=ttu" target="_blank">
+                <p2 style="padding-left: 20px; display: inline-block;">Nagyrét utca / Lunca Mare 15.</p2>
+            </a>
+
+            <h4 style="padding-top: 20px; padding-bottom: 0px; padding-right: 20px; padding-left: 3px; margin-bottom: 5px">
+                Gyergyószentmiklós Kaufland:
+            </h4>
+            <a style="text-decoration: none; color: black;" href="https://www.google.com/maps/place/Kaufland/@46.7216982,25.5796964,17z/data=!3m1!4b1!4m6!3m5!1s0x474aec8f905bfa19:0x5272fcbce9e42cf8!8m2!3d46.7216946!4d25.5822713!16s%2Fg%2F1vf9b459?entry=ttu" target="_blank">
+                <p2 style="padding-left: 20px; display: inline-block;">Testvériség sugárút / B-dul Fratiei 44</p2>
+            </a>
+
+
+        </div>
+        <div id="main">
+            <h4>Exchange rates</h4>
+            <p style="margin: 2px; padding-bottom: 1px;">Updated: {{ last_update }}</p>
+
+            <style>
+  table {
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid rgb(201, 37, 67);
+    padding: 6px;
+  }
+
+
+            </style>
+
+            <table>
+                <thead>
+                <tr>
+                    <th style="width: 150px;">Currency</th>
+                    <th>Flag</th>
+                    <th>Code</th>
+                    <th>We buy</th>
+                    <th>We sell</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="text-align: left;">Euro</td>
+                    <td><img src="{{ url_for('static', filename='eu.jpg') }}" alt="xdxf" height="30" width="45"></td>
+                    <td>EUR</td>
+                    <td>{{ values['eur_buy'] }}</td>
+                    <td>{{ values['eur_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">United State Dollar</td>
+                    <td><img src="{{ url_for('static', filename='US.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>USD</td>
+                    <td>{{ values['usd_buy'] }}</td>
+                    <td>{{ values['usd_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">British Pound</td>
+                    <td><img src="{{ url_for('static', filename='uk.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>GBP</td>
+                    <td>{{ values['gbp_buy'] }}</td>
+                    <td>{{ values['gbp_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Swiss Franc</td>
+                    <td><img src="{{ url_for('static', filename='switzerland.png') }}" alt="Flag 2" height="30"
+                             width="30"></td>
+                    <td>CHF</td>
+                    <td>{{ values['chf_buy'] }}</td>
+                    <td>{{ values['chf_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Hungarian Forint (100)</td>
+                    <td><img src="{{ url_for('static', filename='huf.png') }}" alt="Flag 2" height="27" width="46"></td>
+                    <td>HUF</td>
+                    <td>{{ values['huf_buy'] }}</td>
+                    <td>{{ values['huf_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Swedish Krona</td>
+                    <td><img src="{{ url_for('static', filename='SWE.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>SEK</td>
+                    <td>{{ values['sek_buy'] }}</td>
+                    <td>{{ values['sek_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Danish Krona</td>
+                    <td><img src="{{ url_for('static', filename='den.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>DKK</td>
+                    <td>{{ values['dkk_buy'] }}</td>
+                    <td>{{ values['dkk_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Norwegian Krona</td>
+                    <td><img src="{{ url_for('static', filename='norw.png') }}" alt="Flag 2" height="30" width="45">
+                    </td>
+                    <td>NOK</td>
+                    <td>{{ values['nok_buy'] }}</td>
+                    <td>{{ values['nok_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Canadian Dollar</td>
+                    <td><img src="{{ url_for('static', filename='can.png') }}" alt="Flag 2" height="30" width="49"></td>
+                    <td>CAD</td>
+                    <td>{{ values['cad_buy'] }}</td>
+                    <td>{{ values['cad_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Australian Dollar</td>
+                    <td><img src="{{ url_for('static', filename='austr.jpg') }}" alt="Flag 2" height="30" width="45">
+                    </td>
+                    <td>AUD</td>
+                    <td>{{ values['aud_buy'] }}</td>
+                    <td>{{ values['aud_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Bulgarian Leva</td>
+                    <td><img src="{{ url_for('static', filename='bulg.png') }}" alt="Flag 2" height="30" width="45">
+                    </td>
+                    <td>BGN</td>
+                    <td>{{ values['bgn_buy'] }}</td>
+                    <td>{{ values['bgn_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Polish Zloty</td>
+                    <td><img src="{{ url_for('static', filename='pl.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>PLN</td>
+                    <td>{{ values['pln_buy'] }}</td>
+                    <td>{{ values['pln_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Czech Krona</td>
+                    <td><img src="{{ url_for('static', filename='czk.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>CZK</td>
+                    <td>{{ values['czk_buy'] }}</td>
+                    <td>{{ values['czk_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Turkish Lira</td>
+                    <td><img src="{{ url_for('static', filename='tur.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>TRY</td>
+                    <td>{{ values['try_buy'] }}</td>
+                    <td>{{ values['try_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Serbian Dinar</td>
+                    <td><img src="{{ url_for('static', filename='SRB.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>RSD</td>
+                    <td>{{ values['rsd_buy'] }}</td>
+                    <td>{{ values['rsd_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Ukrainian Hryvna</td>
+                    <td><img src="{{ url_for('static', filename='ukr.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>UAH</td>
+                    <td>{{ values['uah_buy'] }}</td>
+                    <td>{{ values['uah_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Moldovan Lei</td>
+                    <td><img src="{{ url_for('static', filename='mld.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>MDL</td>
+                    <td>{{ values['mdl_buy'] }}</td>
+                    <td>{{ values['mdl_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Russian Ruble</td>
+                    <td><img src="{{ url_for('static', filename='rus.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>RUB</td>
+                    <td>{{ values['rub_buy'] }}</td>
+                    <td>{{ values['rub_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">United Arab Emirates Dirham</td>
+                    <td><img src="{{ url_for('static', filename='aed.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>AED</td>
+                    <td>{{ values['aed_buy'] }}</td>
+                    <td>{{ values['aed_sell'] }}</td>
+                </tr>
+                <tr>
+                    <td style="text-align: left;">Israeli Shekel</td>
+                    <td><img src="{{ url_for('static', filename='isr.png') }}" alt="Flag 2" height="30" width="45"></td>
+                    <td>ILS</td>
+                    <td>{{ values['ils_buy'] }}</td>
+                    <td>{{ values['ils_sell'] }}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="background">
+            <div class="body">
+                <form action="/" method="post" id="message" class="section">
+                    <h3>Send a Message</h3>
+                    <ul>
+                        <li>
+                            <label>Your Name:</label>
+                            <input type="text" name="name" required>
+                        </li>
+                        <li>
+                            <label>Email Address:</label>
+                            <input type="email" name="email" required>
+                        </li>
+                        <li>
+                            <label>Message:</label>
+                            <textarea name="message" required></textarea>
+                        </li>
+                        <li style="width: 260px; text-align: center;">
+                            <input type="submit" value="Send">
+                        </li>
+                    </ul>
+                </form>
+                <div class="section">
+                    <h3>Contact Details</h3>
+                    <ul>
+                        <li>
+                            <span>Location</span><strong>:</strong>
+                            <p>
+                                Strada Bethlen Gábor 79, Odorheiu Secuiesc, 535600, Romania
+                            </p>
+                        </li>
+                        <li>
+                            <span>Phone</span><strong>:</strong>
+                            <p>
+                                0752 077 307
+                            </p>
+                        </li>
+                        <li>
+                            <span>Email</span><strong>:</strong>
+                            <p>
+                                This is just a place holder
+                            </p>
+                        </li>
+                        <li>
+                            <span>Social</span><a href="https://www.facebook.com/rubinvalutavalto" target="_blank"
+                                                  class="facebook"></a>
+                        </li>
+                    </ul>
+                </div>
+                <p id="footnote">
+                    © Copyright 2023. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

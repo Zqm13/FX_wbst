@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Website with Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}" type="text/css">
+    <style>
+		body {
+			background: url("static/rubyform.jpg") no-repeat center center fixed;
+			background-size: cover;
+			font-family: 'DaysOne-Regular';
+			font-size: 36px;
+			font-weight: normal;
+			line-height: 130px;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		form {
+			width: 60%;
+			max-width: 600px;
+			background: rgba(255, 255, 255, 0.8);
+			padding: 40px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			text-align: center;
+		}
+
+		form label,
+		form input,
+		form textarea,
+		form button {
+			display: block;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
+		form .form-input {
+			font-size: 24px; /* Increase the font size for input fields */
+		}
+
+		form textarea {
+			height: 300px;
+			resize: vertical;
+			font-size: 24px;
+		}
+
+		form button {
+			background-color: rgb(200, 37, 66);
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+    </style>
+</head>
+<body>
+<form action="{{ url_for('home') }}" method="get" style="padding: 10px 40px;">
+    <label for="name" style="width: 600px; height: 90px;">Your Name:</label>
+    <input type="text" id="name" name="name" class="form-input" required>
+
+    <label for="email" style="width: 600px; height: 90px;">Email Address:</label>
+    <input type="email" id="email" name="email" class="form-input" required>
+
+    <label for="message" style="width: 600px; height: 90px;">Message:</label>
+    <textarea id="message" name="message" style="font-family: Calibri; font-size: 30px;" required></textarea>
+
+    <button style="font-family: 'DaysOne-Regular';" type="submit">Submit</button>
+</form>
+</body>
+</html>

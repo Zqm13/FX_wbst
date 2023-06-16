@@ -86,13 +86,24 @@ else:
         'ils_sell': "1.48"
     }
 
+LAST_UPDATE_FILE_PATH = "last_update.json"
+
+
 #app.secret_key = os.environ['SCRT_KEY']
 app.secret_key = os.getenv('SCRT_KEY')
 
 @app.route('/', methods=["GET", "POST"])
 def home():
     # Retrieve the last_update variable from the session
-    last_update = session.get('last_update')
+    #last_update = session.get('last_update')
+
+    # Read the last update timestamp from the file
+    if os.path.exists(LAST_UPDATE_FILE_PATH):
+        with open(LAST_UPDATE_FILE_PATH, 'r') as file:
+            last_update_data = json.load(file)
+            last_update = last_update_data.get('last_update')
+    else:
+        last_update = None
 
     if request.method == 'POST':
         name = request.form['name']
@@ -146,7 +157,12 @@ def update():
             json.dump(table_values, file)
 
         # Update the session variable with the formatted datetime
-        session['last_update'] = formatted_datetime
+        #session['last_update'] = formatted_datetime
+
+        # Write the last update timestamp to the file
+        last_update_data = {'last_update': formatted_datetime}
+        with open(LAST_UPDATE_FILE_PATH, 'w') as file:
+            json.dump(last_update_data, file)
 
         # Redirect back to the index page
         return redirect('/')

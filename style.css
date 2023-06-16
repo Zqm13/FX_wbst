@@ -211,7 +211,7 @@ img {
 	padding: 6px 0 5px;
 }
 /** adbox **/
-#contents #logo {
+#contents #logo2 {
 	background: url(bg-adbox-bottom.png) no-repeat left bottom;
 	padding: 0 0 19px;
 	position: relative;
@@ -227,7 +227,7 @@ img {
 	border-bottom-left-radius: 1px;
 	padding-right: 20px;
 }
-#logo > div:after {
+#logo2 > div:after {
 	clear:both;
 	content:"";
 	display:block;
@@ -235,13 +235,13 @@ img {
 	line-height:0;
 	visibility:hidden;
 }
-#logo h1 {
+#logo2 h1 {
 	padding-top: 18px;
 }
-#logo h4 {
+#logo2 h4 {
 	font-size: 14px;
 }
-#logo img {
+#logo2 img {
 	float: left;
 	margin-right: 20px;
 }

@@ -212,7 +212,7 @@ img {
 }
 /** adbox **/
 #contents #logo2 {
-	background: url(bg-adbox-bottom.png) no-repeat left bottom;
+	background: url(bg-logo-bottom.png) no-repeat left bottom;
 	padding: 0 0 19px;
 	position: relative;
 }

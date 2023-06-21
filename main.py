@@ -151,6 +151,10 @@ def update():
     if request.method == 'POST':
         # Get the current date and time
         current_datetime = datetime.datetime.now()
+
+        # Add 3 hours to the current datetime
+        current_datetime = current_datetime + datetime.timedelta(hours=3)
+
         # Format the date and time as desired (hh:mm dd.mm.yyyy)
         formatted_datetime = current_datetime.strftime('%H:%M %d.%m.%Y')
 

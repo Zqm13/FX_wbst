@@ -16,14 +16,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 db.init_app(app)
 
 with app.app_context():
-    # Check if the table exists in the database
-    inspector = inspect(db.engine)
-    table_exists = inspector.has_table('table_values')
-
-    if not table_exists:
-        db.create_all()
-        populate_table_with_json_data('table_values.json')
-
+    #db.create_all()
+    #populate_table_with_json_data('table_values.json')
     write_table_to_json_file('output.json')
     VALUES_FILE_PATH = 'output.json'
 

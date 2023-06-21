@@ -4,15 +4,21 @@ import os
 from flask_httpauth import HTTPBasicAuth
 import datetime
 import smtplib
+from database import db, populate_table_with_json_data, TableValues, write_table_to_json_file
 
 
 # Load environment variables from .env file
 #load_dotenv('.env')
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///values.db'
+db.init_app(app)
 
-# Set the path to the file where the values will be stored
-VALUES_FILE_PATH = 'table_values.json'
+with app.app_context():
+    db.create_all()
+    populate_table_with_json_data('table_values.json')
+    write_table_to_json_file('output.json')
+    VALUES_FILE_PATH = 'output.json'
 
 
 #ADMIN_USERNAME = os.environ["ADMIN_NAME"]

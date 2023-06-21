@@ -11,7 +11,8 @@ from database import db, populate_table_with_json_data, TableValues, write_table
 #load_dotenv('.env')
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///values.db'
+db_uri = os.environ('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 db.init_app(app)
 
 with app.app_context():

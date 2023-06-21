@@ -5,19 +5,25 @@ from flask_httpauth import HTTPBasicAuth
 import datetime
 import smtplib
 from database import db, populate_table_with_json_data, TableValues, write_table_to_json_file, clear_table_content
-
+from sqlalchemy import inspect
 
 # Load environment variables from .env file
 #load_dotenv('.env')
 
 app = Flask(__name__)
-db_uri = os.environ('DATABASE_URL')
+db_uri = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 db.init_app(app)
 
 with app.app_context():
-    #db.create_all()
-    #populate_table_with_json_data('table_values.json')
+    # Check if the table exists in the database
+    inspector = inspect(db.engine)
+    table_exists = inspector.has_table('table_values')
+
+    if not table_exists:
+        db.create_all()
+        populate_table_with_json_data('table_values.json')
+
     write_table_to_json_file('output.json')
     VALUES_FILE_PATH = 'output.json'
 

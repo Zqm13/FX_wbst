@@ -4,7 +4,7 @@ import os
 from flask_httpauth import HTTPBasicAuth
 import datetime
 import smtplib
-from database import db, populate_table_with_json_data, TableValues, write_table_to_json_file
+from database import db, populate_table_with_json_data, TableValues, write_table_to_json_file, clear_table_content
 
 
 # Load environment variables from .env file
@@ -161,6 +161,12 @@ def update():
         # Write the updated values to the file
         with open(VALUES_FILE_PATH, 'w') as file:
             json.dump(table_values, file)
+
+        # Clear the table
+        clear_table_content()
+
+        # Repopulate the table with the updated 'output.json' file
+        populate_table_with_json_data('output.json')
 
         # Update the session variable with the formatted datetime
         #session['last_update'] = formatted_datetime

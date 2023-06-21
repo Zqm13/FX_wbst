@@ -34,3 +34,8 @@ def write_table_to_json_file(file_path):
     # Write the dictionary to the JSON file
     with open(file_path, 'w') as file:
         json.dump(values_dict, file)
+
+def clear_table_content():
+    # Delete all rows from the table
+    TableValues.query.delete()
+    db.session.commit()

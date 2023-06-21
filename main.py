@@ -4,8 +4,9 @@ import os
 from flask_httpauth import HTTPBasicAuth
 import datetime
 import smtplib
+from flask_mail import Mail, Message
 from database import db, populate_table_with_json_data, TableValues, write_table_to_json_file, clear_table_content
-from sqlalchemy import inspect
+
 
 # Load environment variables from .env file
 #load_dotenv('.env')
@@ -15,9 +16,12 @@ db_uri = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 db.init_app(app)
 
+
+
+
 with app.app_context():
-    #db.create_all()
-    #populate_table_with_json_data('table_values.json')
+    db.create_all()
+    populate_table_with_json_data('table_values.json')
     write_table_to_json_file('output.json')
     VALUES_FILE_PATH = 'output.json'
 
@@ -33,6 +37,9 @@ ADMIN_PASSWORD = os.getenv("UPDATE_PASS")
 mail_pass = os.getenv("PASS_MAIL")
 middle_email = os.getenv("MIDDL_MAIL")
 to_adr = os.getenv("TO_ADDR")
+#mail_pass = os.getenv("PASS_MAIL")
+#middle_email = os.getenv("MIDDL_MAIL")
+#to_adr = os.getenv("TO_ADDR")
 
 auth = HTTPBasicAuth()
 
@@ -117,20 +124,24 @@ def home():
         email = request.form['email']
         message = request.form['message']
 
+
+        msg = Message(name, email = middle_email, recipients = to_adr)
+        msg.body = message
+        mail.send(msg)
         # Create the email message
-        connection = smtplib.SMTP('smtp.gmail.com')
-        connection.starttls()
-        connection.login(user=middle_email, password=mail_pass)
+        #connection = smtplib.SMTP('smtp.gmail.com')
+        #connection.starttls()
+        #connection.login(user=middle_email, password=mail_pass)
 
 
-        try:
-            message_body = f"Name: {name}\nEmail: {email}\n\n{message}"
-            connection.sendmail(from_addr=middle_email, to_addrs=to_adr,
-                                msg=message_body)
-            return render_template('index.html', values=table_values, last_update=last_update)
-        except Exception as e:
-            print(str(e))
-            return 'An error occurred while sending the message.'
+        #try:
+            #message_body = f"Name: {name}\nEmail: {email}\n\n{message}"
+            #connection.sendmail(from_addr=middle_email, to_addrs=to_adr,
+                                #msg=message_body)
+            #return render_template('index.html', values=table_values, last_update=last_update)
+        #except Exception as e:
+            #print(str(e))
+            #return 'An error occurred while sending the message.'
 
     return render_template('index.html', values=table_values, last_update=last_update)
 

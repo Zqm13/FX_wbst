@@ -20,8 +20,8 @@ db.init_app(app)
 
 
 with app.app_context():
-    #db.create_all()
-    #populate_table_with_json_data('table_values.json')
+    db.create_all()
+    populate_table_with_json_data('table_values.json')
     write_table_to_json_file('output.json')
     VALUES_FILE_PATH = 'output.json'
 

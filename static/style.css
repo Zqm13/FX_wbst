@@ -248,7 +248,7 @@ img {
 /** Sidebar **/
 #contents .sidebar {
 	float: left;
-	min-height: 1080px;
+	min-height: 1066px;
 	width: 190px;
 	border-right: 1px solid rgb(200, 37, 66);
 	margin: -19px 90px 0 30px;

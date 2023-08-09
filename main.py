@@ -55,20 +55,36 @@ import urllib.parse
 #    return render_template('offer.html')
 
 
+#@app.route('/submit', methods=['POST'])
+#def submit():
+#    return redirect(url_for('index'))
+
+
+
+
+
+
+# setting up environment variables
+ADMIN_USERNAME = os.getenv("ADMIN_NAME")
+ADMIN_PASSWORD = os.getenv("UPDATE_PASS")
+
+
+# setting up database connection
 app = Flask(__name__)
 db_uri = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 db.init_app(app)
 
+
+# query from database into output.json
 with app.app_context():
     db.create_all()
     populate_table_with_json_data('table_values.json')
     write_table_to_json_file('output.json')
     VALUES_FILE_PATH = 'output.json'
 
-ADMIN_USERNAME = os.getenv("ADMIN_NAME")
-ADMIN_PASSWORD = os.getenv("UPDATE_PASS")
 
+# setting up authentication
 auth = HTTPBasicAuth()
 
 
@@ -79,13 +95,13 @@ def verify_password(username, password):
     return False
 
 
-# Check if the values file exists
+# Check if output.json exist
 if os.path.exists(VALUES_FILE_PATH):
-    # Read the values from the file
+    # Read the values from output.json into table_values
     with open(VALUES_FILE_PATH, 'r') as file:
         table_values = json.load(file)
 else:
-    # If the file doesn't exist, use the initial values
+    # If the file doesn't exist, use dummy values
     table_values = {
         'eur_buy': "X",
         'eur_sell': "X",
@@ -129,21 +145,24 @@ else:
         'ils_sell': "X"
     }
 
-LAST_UPDATE_FILE_PATH = "last_update.json"
+# Timestamp of last update saved into variable from json
+LAST_UPDATE_FILE_PATH_TIME = "last_update.json"
 
+# Get secret key for app
 app.secret_key = os.getenv('SCRT_KEY')
 
 
 @app.route('/', methods=["GET", "POST"])
 def home():
-    # Read the last update timestamp from the file
-    if os.path.exists(LAST_UPDATE_FILE_PATH):
-        with open(LAST_UPDATE_FILE_PATH, 'r') as file:
+    # Read the last update timestamp from the file with last_update variable
+    if os.path.exists(LAST_UPDATE_FILE_PATH_TIME):
+        with open(LAST_UPDATE_FILE_PATH_TIME, 'r') as file:
             last_update_data = json.load(file)
             last_update = last_update_data.get('last_update')
     else:
         last_update = None
 
+    # Sending email if submit button is hit
     if request.method == 'POST':
         email_message = request.form.get('message')
         email_address = "lhunor@protonmail.com"
@@ -156,14 +175,11 @@ def home():
         mailto_link = f"mailto:{email_address}?subject={encoded_email_subject}&body={encoded_email_message}"
         return redirect(mailto_link)
 
+    # Returns the homepage with values from the json file from the database and with the last_update timestamp
     return render_template('index.html', values=table_values, last_update=last_update)
 
 
-@app.route('/submit', methods=['POST'])
-def submit():
-    return redirect(url_for('index'))
-
-
+# Update page with authentication
 @app.route('/update', methods=['GET', 'POST'])
 @auth.login_required
 def update():
@@ -171,13 +187,13 @@ def update():
         # Get the current date and time
         current_datetime = datetime.datetime.now()
 
-        # Add 3 hours to the current datetime
+        # Add 3 hours to the current datetime due to hosting server time zone
         current_datetime = current_datetime + datetime.timedelta(hours=3)
 
         # Format the date and time as desired (hh:mm dd.mm.yyyy)
         formatted_datetime = current_datetime.strftime('%H:%M %d.%m.%Y')
 
-        # Iterate over the keys in table_values and update their values from the form data
+        # Iterate over the keys in table_values and update their values from the form on update page
         for key in table_values.keys():
             table_values[key] = request.form.get(key)
 
@@ -191,9 +207,9 @@ def update():
         # Repopulate the table with the updated 'output.json' file
         populate_table_with_json_data('output.json')
 
-        # Write the last update timestamp to the file
+        # Write the last update timestamp to the last_update_data variable
         last_update_data = {'last_update': formatted_datetime}
-        with open(LAST_UPDATE_FILE_PATH, 'w') as file:
+        with open(LAST_UPDATE_FILE_PATH_TIME, 'w') as file:
             json.dump(last_update_data, file)
 
         # Redirect back to the index page
@@ -203,6 +219,7 @@ def update():
     return render_template('update.html', values=table_values)
 
 
+# Handle unauthorized access
 @auth.error_handler
 def unauthorized():
     return auth.authenticate_header()
